@@ -10,6 +10,10 @@
 		07F66B4FC49C15A8142998B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD3C50317F739E8D419E8E6 /* Foundation.framework */; };
 		123AC0A76BBE98F064817EC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC98C6258C3F854C69589F /* AppDelegate.swift */; };
 		75BBE582FAA7E9E226E3B9F9 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = FCDD9440779E963CADB83333 /* Main.storyboard */; };
+		811EE2C41B582E740026896F /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C31B582E740026896F /* EpisodeViewController.swift */; };
+		811EE2C61B583AE30026896F /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C51B583AE30026896F /* SeasonViewController.swift */; };
+		811EE2C81B5846260026896F /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */; };
+		81FCF7791B56DE4200E78ACA /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */; };
 		9C07082D31D8BE9A864C526F /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = C58147B1CAD29A480121EE0D /* LaunchScreen.xib */; };
 		A11813B1FC5F8F0648726FE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21FADF1F49E4EC5D4EC6483 /* Images.xcassets */; };
 		A486EA714178371DF67C4476 /* Pods_unit_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C0B0A2B84963AC8C6AD419 /* Pods_unit_tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -33,6 +37,10 @@
 		699022633D87DDF4AC3C78F1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FD3C50317F739E8D419E8E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		70880466685C86E9D8FEB21D /* Storyboards.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		811EE2C31B582E740026896F /* EpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeViewController.swift; path = ovo/ViewControllers/EpisodeViewController.swift; sourceTree = SOURCE_ROOT; };
+		811EE2C51B583AE30026896F /* SeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonViewController.swift; path = ovo/ViewControllers/SeasonViewController.swift; sourceTree = SOURCE_ROOT; };
+		811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8AC1433931C36FDC01250EA1 /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		98DB4AF8E47D028E4AC1C614 /* ovo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ovo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2BC98C6258C3F854C69589F /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 			children = (
 				C2BC98C6258C3F854C69589F /* AppDelegate.swift */,
 				70880466685C86E9D8FEB21D /* Storyboards.swift */,
+				81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +180,8 @@
 		C1AEE0F0A878E50B4F8C27FF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				811EE2C31B582E740026896F /* EpisodeViewController.swift */,
+				811EE2C51B583AE30026896F /* SeasonViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,6 +212,7 @@
 		E5DD680B32BBFE71A8A2495F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,8 +441,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				123AC0A76BBE98F064817EC4 /* AppDelegate.swift in Sources */,
+				811EE2C81B5846260026896F /* EpisodeTableViewCell.swift in Sources */,
+				81FCF7791B56DE4200E78ACA /* CustomNavigationController.swift in Sources */,
 				E22AF60C2C34D51208B46BC1 /* Storyboards.swift in Sources */,
+				811EE2C61B583AE30026896F /* SeasonViewController.swift in Sources */,
 				75BBE582FAA7E9E226E3B9F9 /* Main.storyboard in Sources */,
+				811EE2C41B582E740026896F /* EpisodeViewController.swift in Sources */,
 				9C07082D31D8BE9A864C526F /* LaunchScreen.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

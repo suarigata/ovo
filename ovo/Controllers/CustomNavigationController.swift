@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+class CustomNavigationController: UINavigationController{
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+}

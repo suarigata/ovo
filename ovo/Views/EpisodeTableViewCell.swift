@@ -14,6 +14,10 @@ class EpisodeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -21,4 +25,5 @@ class EpisodeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
 }
