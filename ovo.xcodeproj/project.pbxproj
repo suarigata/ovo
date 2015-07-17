@@ -13,10 +13,13 @@
 		811EE2C41B582E740026896F /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C31B582E740026896F /* EpisodeViewController.swift */; };
 		811EE2C61B583AE30026896F /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C51B583AE30026896F /* SeasonViewController.swift */; };
 		811EE2C81B5846260026896F /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */; };
+		81A91B981B5978E3007C1E3A /* ShowsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A91B971B5978E3007C1E3A /* ShowsCollectionViewCell.swift */; };
+		81A91B9A1B597C3D007C1E3A /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A91B991B597C3D007C1E3A /* ShowsViewController.swift */; };
 		81FCF7791B56DE4200E78ACA /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */; };
 		9C07082D31D8BE9A864C526F /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = C58147B1CAD29A480121EE0D /* LaunchScreen.xib */; };
 		A11813B1FC5F8F0648726FE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21FADF1F49E4EC5D4EC6483 /* Images.xcassets */; };
 		A486EA714178371DF67C4476 /* Pods_unit_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C0B0A2B84963AC8C6AD419 /* Pods_unit_tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B38D8EF1C160A3AA01220F5F /* Pods_ovo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B95E0D20CB78577E0AF4D /* Pods_ovo.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E22AF60C2C34D51208B46BC1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70880466685C86E9D8FEB21D /* Storyboards.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,7 @@
 /* Begin PBXFileReference section */
 		45C0B0A2B84963AC8C6AD419 /* Pods_unit_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unit_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B422E841D8F70211129D92 /* Pods-unit_tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.debug.xcconfig"; sourceTree = "<group>"; };
+		4FC3643DA5CFE92C6659B7D2 /* Pods-ovo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ovo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ovo/Pods-ovo.release.xcconfig"; sourceTree = "<group>"; };
 		58DE692D4818B7762D3861FA /* Pods-unit_tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.release.xcconfig"; sourceTree = "<group>"; };
 		699022633D87DDF4AC3C78F1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FD3C50317F739E8D419E8E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -40,11 +44,15 @@
 		811EE2C31B582E740026896F /* EpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeViewController.swift; path = ovo/ViewControllers/EpisodeViewController.swift; sourceTree = SOURCE_ROOT; };
 		811EE2C51B583AE30026896F /* SeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonViewController.swift; path = ovo/ViewControllers/SeasonViewController.swift; sourceTree = SOURCE_ROOT; };
 		811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		81A91B971B5978E3007C1E3A /* ShowsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsCollectionViewCell.swift; sourceTree = "<group>"; };
+		81A91B991B597C3D007C1E3A /* ShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
 		81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8AC1433931C36FDC01250EA1 /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		98DB4AF8E47D028E4AC1C614 /* ovo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ovo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2B95E0D20CB78577E0AF4D /* Pods_ovo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ovo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2BC98C6258C3F854C69589F /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C58147B1CAD29A480121EE0D /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		E284A4453EE553DA17061CCD /* Pods-ovo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ovo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ovo/Pods-ovo.debug.xcconfig"; sourceTree = "<group>"; };
 		ECCEC97B91000DFC91264F24 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21FADF1F49E4EC5D4EC6483 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCDD9440779E963CADB83333 /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F66B4FC49C15A8142998B4 /* Foundation.framework in Frameworks */,
+				B38D8EF1C160A3AA01220F5F /* Pods_ovo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +149,7 @@
 			children = (
 				D2AE9D38EEE6D08C128614F5 /* iOS */,
 				45C0B0A2B84963AC8C6AD419 /* Pods_unit_tests.framework */,
+				BA2B95E0D20CB78577E0AF4D /* Pods_ovo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,6 +159,8 @@
 			children = (
 				58DE692D4818B7762D3861FA /* Pods-unit_tests.release.xcconfig */,
 				47B422E841D8F70211129D92 /* Pods-unit_tests.debug.xcconfig */,
+				4FC3643DA5CFE92C6659B7D2 /* Pods-ovo.release.xcconfig */,
+				E284A4453EE553DA17061CCD /* Pods-ovo.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -182,6 +194,7 @@
 			children = (
 				811EE2C31B582E740026896F /* EpisodeViewController.swift */,
 				811EE2C51B583AE30026896F /* SeasonViewController.swift */,
+				81A91B991B597C3D007C1E3A /* ShowsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */,
+				81A91B971B5978E3007C1E3A /* ShowsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,12 +290,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC0D998A39436E21CA0FB1CB /* Build configuration list for PBXNativeTarget "ovo" */;
 			buildPhases = (
+				7CBB9B2DAD8BF8E8E32D49FC /* Check Pods Manifest.lock */,
 				6EDEF294718239C2B6B2B515 /* Generate Storyboards.swift (Natalie) */,
 				6B8175F7BFA0CF787EEA0489 /* Sources */,
 				1CA9EDDFD7FCD78D7FA0D5B2 /* Frameworks */,
 				DBA55E4EE8AC6DAA90498550 /* Resources */,
 				5C83C23D6677625626AC96EA /* Warn for TODO and FIXME comments */,
 				581B9D18F70EF75C0A1D44AF /* Set version number */,
+				8C3C0EE372F13705D167611C /* Embed Pods Frameworks */,
+				836078BD5FACF96F86886D14 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -396,6 +413,51 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/natalie.swift \"$PROJECT_DIR/$PROJECT_NAME\" > \"$PROJECT_DIR/$PROJECT_NAME/Controllers/Storyboards.swift\"\n";
 		};
+		7CBB9B2DAD8BF8E8E32D49FC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		836078BD5FACF96F86886D14 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ovo/Pods-ovo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C3C0EE372F13705D167611C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ovo/Pods-ovo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CC2166777D0C7D6A90482B97 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,12 +503,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				123AC0A76BBE98F064817EC4 /* AppDelegate.swift in Sources */,
+				81A91B9A1B597C3D007C1E3A /* ShowsViewController.swift in Sources */,
 				811EE2C81B5846260026896F /* EpisodeTableViewCell.swift in Sources */,
 				81FCF7791B56DE4200E78ACA /* CustomNavigationController.swift in Sources */,
 				E22AF60C2C34D51208B46BC1 /* Storyboards.swift in Sources */,
 				811EE2C61B583AE30026896F /* SeasonViewController.swift in Sources */,
 				75BBE582FAA7E9E226E3B9F9 /* Main.storyboard in Sources */,
 				811EE2C41B582E740026896F /* EpisodeViewController.swift in Sources */,
+				81A91B981B5978E3007C1E3A /* ShowsCollectionViewCell.swift in Sources */,
 				9C07082D31D8BE9A864C526F /* LaunchScreen.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +528,7 @@
 /* Begin XCBuildConfiguration section */
 		10A82D345D054CE21AD59DE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E284A4453EE553DA17061CCD /* Pods-ovo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -627,6 +692,7 @@
 		};
 		FF526B74A8DE14734D017864 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FC3643DA5CFE92C6659B7D2 /* Pods-ovo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;

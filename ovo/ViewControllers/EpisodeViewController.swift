@@ -18,7 +18,8 @@ class EpisodeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        titleEpisode.text = "Episode Title"
+        //titleEpisode.text = "Episode Title"
+        
     }
 
     override func didReceiveMemoryWarning() {
