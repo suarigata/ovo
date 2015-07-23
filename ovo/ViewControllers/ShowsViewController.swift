@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import TraktModels
 
 class ShowsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+    
+    private var shows : [Show] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var traktHTTPClient = TraktHTTPClient()
+        traktHTTPClient.getPopularShows { (result) -> Void in
+            if let shows = result.value{
+                self.shows=shows
+            } else {
+                print("deu erro")
+                print(result.error)
+                // erro TODO
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -22,25 +35,37 @@ class ShowsViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10;
+        return self.shows.count + 1;
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let identifier = Reusable.ShowsCell.identifier!
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! ShowsCollectionViewCell
         
-        var url:NSURL? = NSURL(string: "http://i62.tinypic.com/2mw9kr9.jpg")
-        var data:NSData? = NSData(contentsOfURL : url!)
+        var traktHTTPClient = TraktHTTPClient()
+        traktHTTPClient.getShow("game-of-thrones", completion: { (result) -> Void in
+            if let show = result.value{
+                var url:NSURL? = NSURL(string: "http://i62.tinypic.com/2mw9kr9.jpg")
+                var data:NSData? = NSData(contentsOfURL : url!)
+                
+                if let dat = data{
+                    var imag = UIImage(data : dat)
+                    cell.load(show.title,image: imag!)
+                    
+                }
+                else{
+                    let imag=UIImage(named: "clock")
+                    cell.load("oVo",image: imag!)
+                }
+
+            }
+            else {
+                print("deu erro")
+                print(result.error)
+                // erro TODO
+            }
+        })
         
-        if let dat = data{
-            var imag = UIImage(data : dat)
-            cell.load("oVo",image: imag!)
-            
-        }
-        else{
-            let imag=UIImage(named: "clock")
-            cell.load("oVo",image: imag!)
-        }
         
         
         return cell

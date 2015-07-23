@@ -15,6 +15,8 @@
 		811EE2C81B5846260026896F /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */; };
 		81A91B981B5978E3007C1E3A /* ShowsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A91B971B5978E3007C1E3A /* ShowsCollectionViewCell.swift */; };
 		81A91B9A1B597C3D007C1E3A /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A91B991B597C3D007C1E3A /* ShowsViewController.swift */; };
+		81C524001B600D7E00CD0FED /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 81C523FF1B600D7E00CD0FED /* clock.png */; };
+		81C524021B600DFF00CD0FED /* TraktHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C524011B600DFF00CD0FED /* TraktHTTPClient.swift */; };
 		81FCF7791B56DE4200E78ACA /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */; };
 		9C07082D31D8BE9A864C526F /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = C58147B1CAD29A480121EE0D /* LaunchScreen.xib */; };
 		A11813B1FC5F8F0648726FE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21FADF1F49E4EC5D4EC6483 /* Images.xcassets */; };
@@ -46,6 +48,8 @@
 		811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		81A91B971B5978E3007C1E3A /* ShowsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsCollectionViewCell.swift; sourceTree = "<group>"; };
 		81A91B991B597C3D007C1E3A /* ShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
+		81C523FF1B600D7E00CD0FED /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock.png; path = "../../../movile-up/img/exports/clock.png"; sourceTree = "<group>"; };
+		81C524011B600DFF00CD0FED /* TraktHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktHTTPClient.swift; sourceTree = "<group>"; };
 		81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8AC1433931C36FDC01250EA1 /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		98DB4AF8E47D028E4AC1C614 /* ovo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ovo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				F21FADF1F49E4EC5D4EC6483 /* Images.xcassets */,
+				81C523FF1B600D7E00CD0FED /* clock.png */,
 				F3E324095F8C7532FC172CBA /* Storyboards */,
 				E5A7E849161BDD3345DBF27D /* Nibs */,
 				2E4AA91B10B0BEC042D362B6 /* Other-Sources */,
@@ -185,6 +190,7 @@
 				C2BC98C6258C3F854C69589F /* AppDelegate.swift */,
 				70880466685C86E9D8FEB21D /* Storyboards.swift */,
 				81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */,
+				81C524011B600DFF00CD0FED /* TraktHTTPClient.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C524001B600D7E00CD0FED /* clock.png in Resources */,
 				A11813B1FC5F8F0648726FE9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +518,7 @@
 				75BBE582FAA7E9E226E3B9F9 /* Main.storyboard in Sources */,
 				811EE2C41B582E740026896F /* EpisodeViewController.swift in Sources */,
 				81A91B981B5978E3007C1E3A /* ShowsCollectionViewCell.swift in Sources */,
+				81C524021B600DFF00CD0FED /* TraktHTTPClient.swift in Sources */,
 				9C07082D31D8BE9A864C526F /* LaunchScreen.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

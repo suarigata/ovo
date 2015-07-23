@@ -32,5 +32,8 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
         cell.load(ids[indexPath.row], nome: nomes[indexPath.row])
         return cell
     }
-
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        <#code#>
+//    }
 }
