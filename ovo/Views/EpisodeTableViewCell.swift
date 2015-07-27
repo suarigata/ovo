@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TraktModels
 
 class EpisodeTableViewCell: UITableViewCell {
 
@@ -28,8 +29,8 @@ class EpisodeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func load(id : String, nome : String){
-        episodio_id.text=id
-        episodio_nome.text=nome
+    func loadEpisode(episode: Episode){
+        episodio_nome.text = episode.title
+        episodio_id.text=episode.identifiers?.imdb
     }
 }

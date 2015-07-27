@@ -9,7 +9,10 @@ target 'ovo', :exclusive => true do
     # Add Application pods here
     pod 'Alamofire'
     pod 'Result'
+    pod 'Kingfisher'
     pod 'TraktModels', :git => 'https://github.com/marcelofabri/TraktModels.git'
+    pod 'FloatRatingView', :git => 'https://github.com/strekfus/FloatRatingView.git'
+    pod 'BorderedView'
 end
 
 target :unit_tests, :exclusive => true do

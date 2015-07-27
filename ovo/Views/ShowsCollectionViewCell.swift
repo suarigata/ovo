@@ -7,14 +7,31 @@
 //
 
 import UIKit
+import TraktModels
+import Kingfisher
 
 class ShowsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imagem: UIImageView!
     @IBOutlet weak var texto: UILabel!
     
-    func load(text : String, image : UIImage){
-        imagem.image=image  //UIImage(named: "clock")
-        texto.text=text
+    private var task: RetrieveImageTask?
+    
+    func loadShow(show: Show){
+        let placeholder = UIImage(named: "poster")
+        if let url = show.poster?.fullImageURL ?? show.poster?.mediumImageURL ?? show.poster?.thumbImageURL {
+            task = imagem.kf_setImageWithURL(url, placeholderImage: placeholder)
+        }
+        else{
+            imagem.image = placeholder
+        }
+        texto.text = show.title
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        task?.cancel()
+        task = nil
+        imagem.image = nil
     }
 }

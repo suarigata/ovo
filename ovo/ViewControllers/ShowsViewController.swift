@@ -11,21 +11,27 @@ import TraktModels
 
 class ShowsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-    private var shows : [Show] = []
-
+    @IBOutlet weak var collectionView: UICollectionView!
+    private let traktHTTPClient = TraktHTTPClient()
+    private var shows : [Show]?
+    private var images : [UIImage] = []
+    
+    func loadShows() {
+        traktHTTPClient.getPopularShows { [weak self] result in
+            if let shows = result.value {
+                self?.shows = shows
+                self?.collectionView.reloadData()
+            }
+            else{
+                println("oops \(result.error)")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var traktHTTPClient = TraktHTTPClient()
-        traktHTTPClient.getPopularShows { (result) -> Void in
-            if let shows = result.value{
-                self.shows=shows
-            } else {
-                print("deu erro")
-                print(result.error)
-                // erro TODO
-            }
-        }
+        self.loadShows()
         // Do any additional setup after loading the view.
     }
 
@@ -35,39 +41,18 @@ class ShowsViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.shows.count + 1;
+        
+        return self.shows?.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let identifier = Reusable.ShowsCell.identifier!
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! ShowsCollectionViewCell
         
-        var traktHTTPClient = TraktHTTPClient()
-        traktHTTPClient.getShow("game-of-thrones", completion: { (result) -> Void in
-            if let show = result.value{
-                var url:NSURL? = NSURL(string: "http://i62.tinypic.com/2mw9kr9.jpg")
-                var data:NSData? = NSData(contentsOfURL : url!)
-                
-                if let dat = data{
-                    var imag = UIImage(data : dat)
-                    cell.load(show.title,image: imag!)
-                    
-                }
-                else{
-                    let imag=UIImage(named: "clock")
-                    cell.load("oVo",image: imag!)
-                }
-
-            }
-            else {
-                print("deu erro")
-                print(result.error)
-                // erro TODO
-            }
-        })
-        
-        
-        
+        if let shows = self.shows{
+            cell.loadShow(shows[indexPath.row])
+        }
+    
         return cell
     }
     
@@ -84,6 +69,14 @@ class ShowsViewController: UIViewController, UICollectionViewDataSource, UIColle
             bottom: flowLayout.sectionInset.bottom, right: space)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue == Segue.shows_to_show{
+            if let cell = sender as? UICollectionViewCell, indexPath = collectionView.indexPathForCell(cell){
+                let vc = segue.destinationViewController as! SeasonViewController
+                vc.show = shows?[indexPath.row].identifiers.slug
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

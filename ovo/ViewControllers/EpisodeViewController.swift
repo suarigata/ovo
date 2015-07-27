@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import TraktModels
+import Kingfisher
 
 class EpisodeViewController: UIViewController {
 
@@ -14,9 +16,35 @@ class EpisodeViewController: UIViewController {
     @IBOutlet weak var titleEpisode: UILabel!
     @IBOutlet weak var textEpisode: UITextView!
     
+    // @IBOutlet var collectionView: UIView! // TODO tirar
+    
+    private var task: RetrieveImageTask?
+    
+    var episode : Episode?
+    
+    func loadEpisode(){
+        episode?.screenshot
+        if let titulo = self.episode?.title, overview = self.episode?.overview{
+            self.titleEpisode.text = titulo
+            self.textEpisode.text = overview
+            
+            let placeholder = UIImage(named: "poster")
+
+
+            if let url = episode?.screenshot?.fullImageURL ?? episode?.screenshot?.mediumImageURL ?? episode?.screenshot?.thumbImageURL{
+                self.task = self.imageEpisode.kf_setImageWithURL(url, placeholderImage: placeholder)
+            }
+            else{
+                self.imageEpisode.image = placeholder
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        loadEpisode()
+        
         // Do any additional setup after loading the view.
         //titleEpisode.text = "Episode Title"
         
