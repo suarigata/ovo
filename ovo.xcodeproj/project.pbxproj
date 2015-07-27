@@ -17,6 +17,7 @@
 		81A91B9A1B597C3D007C1E3A /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A91B991B597C3D007C1E3A /* ShowsViewController.swift */; };
 		81C524021B600DFF00CD0FED /* TraktHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C524011B600DFF00CD0FED /* TraktHTTPClient.swift */; };
 		81C7BC571B66C15500C5880F /* SeasonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C7BC561B66C15500C5880F /* SeasonsTableViewController.swift */; };
+		81C7BC591B66D03600C5880F /* SeasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C7BC581B66D03600C5880F /* SeasonsTableViewCell.swift */; };
 		81FCF7791B56DE4200E78ACA /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */; };
 		9C07082D31D8BE9A864C526F /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = C58147B1CAD29A480121EE0D /* LaunchScreen.xib */; };
 		A11813B1FC5F8F0648726FE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21FADF1F49E4EC5D4EC6483 /* Images.xcassets */; };
@@ -50,6 +51,7 @@
 		81A91B991B597C3D007C1E3A /* ShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
 		81C524011B600DFF00CD0FED /* TraktHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktHTTPClient.swift; sourceTree = "<group>"; };
 		81C7BC561B66C15500C5880F /* SeasonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsTableViewController.swift; sourceTree = "<group>"; };
+		81C7BC581B66D03600C5880F /* SeasonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsTableViewCell.swift; sourceTree = "<group>"; };
 		81FCF7781B56DE4200E78ACA /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8AC1433931C36FDC01250EA1 /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		98DB4AF8E47D028E4AC1C614 /* ovo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ovo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +235,7 @@
 			children = (
 				811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */,
 				81A91B971B5978E3007C1E3A /* ShowsCollectionViewCell.swift */,
+				81C7BC581B66D03600C5880F /* SeasonsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				123AC0A76BBE98F064817EC4 /* AppDelegate.swift in Sources */,
+				81C7BC591B66D03600C5880F /* SeasonsTableViewCell.swift in Sources */,
 				81A91B9A1B597C3D007C1E3A /* ShowsViewController.swift in Sources */,
 				811EE2C81B5846260026896F /* EpisodeTableViewCell.swift in Sources */,
 				81FCF7791B56DE4200E78ACA /* CustomNavigationController.swift in Sources */,

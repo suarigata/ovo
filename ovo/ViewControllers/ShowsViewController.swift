@@ -70,10 +70,12 @@ class ShowsViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue == Segue.shows_to_show{
+        if segue == Segue.show_to_show{
             if let cell = sender as? UICollectionViewCell, indexPath = collectionView.indexPathForCell(cell){
-                let vc = segue.destinationViewController as! SeasonViewController
-                vc.show = shows?[indexPath.row].identifiers.slug
+                let vc = segue.destinationViewController as! SeasonsTableViewController
+                if let s = shows{
+                    vc.show = s[indexPath.row].identifiers.slug
+                }
             }
         }
     }

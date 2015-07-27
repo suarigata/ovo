@@ -53,10 +53,10 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         if segue == Segue.episode_to_show{
-            if let cell = sender as? UITableViewCell, indexPath = collectionView.indexPathForCell(cell){
-                let vc = segue.destinationViewController as! EpisodeViewController
-                vc.episode = episodes?[indexPath.row]
-            }
+//            if let cell = sender as? UITableViewCell, indexPath = collectionView.indexPathForCell(cell){
+//                let vc = segue.destinationViewController as! EpisodeViewController
+//                vc.episode = episodes?[indexPath.row]
+//            }
         }
     }
 }
