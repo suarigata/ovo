@@ -11,6 +11,7 @@ import TraktModels
 
 class SeasonViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var collectionView: UITableView!
+    @IBOutlet weak var titulo: UINavigationItem!
     
     var show : String?
     var season : Int?
@@ -32,6 +33,8 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.titulo.title = "Season " + String(self.season ?? 0)
         
         loadSeasonEpisodes()
         // Do any additional setup after loading the view.

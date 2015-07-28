@@ -31,6 +31,8 @@ class EpisodeTableViewCell: UITableViewCell {
     
     func loadEpisode(episode: Episode){
         episodio_nome.text = episode.title
-        episodio_id.text=episode.identifiers?.imdb
+        let s = episode.seasonNumber
+        let n = episode.number
+        episodio_id.text="S" + (s < 10 ? "0" : "") + String(s) + "E" + (n < 10 ? "0" : "") + String(n)
     }
 }

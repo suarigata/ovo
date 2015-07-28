@@ -12,6 +12,7 @@ import Kingfisher
 
 class EpisodeViewController: UIViewController {
 
+    @IBOutlet weak var titleNumEpisode: UINavigationItem!
     @IBOutlet weak var imageEpisode: UIImageView!
     @IBOutlet weak var titleEpisode: UILabel!
     @IBOutlet weak var textEpisode: UITextView!
@@ -23,7 +24,8 @@ class EpisodeViewController: UIViewController {
     var episode : Episode?
     
     func loadEpisode(){
-        episode?.screenshot
+        // episode?.screenshot
+        titleNumEpisode.title = "Episode " + String(episode?.number ?? 0)
         if let titulo = self.episode?.title, overview = self.episode?.overview{
             self.titleEpisode.text = titulo
             self.textEpisode.text = overview
@@ -44,6 +46,11 @@ class EpisodeViewController: UIViewController {
         super.viewDidLoad()
         
         loadEpisode()
+        
+//        let url = NSURL(string: "http://www.google.com")!
+//        let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+//        
+//        presentViewController(vc, animated: true, completion: nil)
         
         // Do any additional setup after loading the view.
         //titleEpisode.text = "Episode Title"

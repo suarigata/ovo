@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="-875" y="639"/>
         </scene>
-        <!--Seasons Table View Controller-->
+        <!--Seasons-->
         <scene sceneID="FqV-52-Wbd">
             <objects>
                 <tableViewController id="77t-Pd-MEo" customClass="SeasonsTableViewController" customModule="ovo" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,7 +115,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Seasons" id="DH8-FR-Zmw"/>
+                                <navigationItem id="DH8-FR-Zmw"/>
                             </items>
                         </navigationBar>
                         <prototypes>
@@ -215,6 +215,7 @@
                             <outlet property="delegate" destination="77t-Pd-MEo" id="tlZ-CD-0Yh"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Seasons" id="7aA-Ol-ebU"/>
                     <connections>
                         <outlet property="collectionView" destination="w7g-5p-EbV" id="JGS-Aj-BsC"/>
                     </connections>
@@ -239,14 +240,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SeasonCell" id="1Rq-Ps-XPx" customClass="EpisodeTableViewCell" customModule="ovo" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SeasonCell" id="1Rq-Ps-XPx" customClass="EpisodeTableViewCell" customModule="ovo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Rq-Ps-XPx" id="Wmh-3q-YMM">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIs-9F-dP4">
-                                                    <rect key="frame" x="1" y="0.0" width="598" height="21"/>
+                                                    <rect key="frame" x="1" y="0.0" width="565" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="JCH-xb-LaZ"/>
                                                     </constraints>
@@ -255,7 +256,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeU-KN-tEK">
-                                                    <rect key="frame" x="1" y="22" width="598" height="21"/>
+                                                    <rect key="frame" x="1" y="22" width="565" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -295,6 +296,7 @@
                     <navigationItem key="navigationItem" title="Season" id="6C5-9d-BD8"/>
                     <connections>
                         <outlet property="collectionView" destination="DVb-O1-Qcw" id="Ur9-zc-CZj"/>
+                        <outlet property="titulo" destination="6C5-9d-BD8" id="Oec-w3-liz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82T-Ig-lMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -338,7 +340,7 @@
                                     <constraint firstAttribute="height" constant="21" id="9u9-gG-MUn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -366,6 +368,7 @@
                         <outlet property="imageEpisode" destination="UOT-A1-5We" id="Zu3-pf-R91"/>
                         <outlet property="textEpisode" destination="wE0-m2-E0G" id="BEN-cZ-Let"/>
                         <outlet property="titleEpisode" destination="IXh-Gz-Kbo" id="exA-6e-evG"/>
+                        <outlet property="titleNumEpisode" destination="lcu-jg-eED" id="5vj-NJ-I3a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtT-ar-l8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
