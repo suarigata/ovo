@@ -13,6 +13,7 @@
 		811EE2C41B582E740026896F /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C31B582E740026896F /* EpisodeViewController.swift */; };
 		811EE2C61B583AE30026896F /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C51B583AE30026896F /* SeasonViewController.swift */; };
 		811EE2C81B5846260026896F /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */; };
+		814BFE501B67F5FA00157C7D /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BFE4F1B67F5FA00157C7D /* FavoritesManager.swift */; };
 		81A91B981B5978E3007C1E3A /* ShowsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A91B971B5978E3007C1E3A /* ShowsCollectionViewCell.swift */; };
 		81A91B9A1B597C3D007C1E3A /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A91B991B597C3D007C1E3A /* ShowsViewController.swift */; };
 		81C524021B600DFF00CD0FED /* TraktHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C524011B600DFF00CD0FED /* TraktHTTPClient.swift */; };
@@ -47,6 +48,7 @@
 		811EE2C31B582E740026896F /* EpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeViewController.swift; path = ovo/ViewControllers/EpisodeViewController.swift; sourceTree = SOURCE_ROOT; };
 		811EE2C51B583AE30026896F /* SeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonViewController.swift; path = ovo/ViewControllers/SeasonViewController.swift; sourceTree = SOURCE_ROOT; };
 		811EE2C71B5846260026896F /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		814BFE4F1B67F5FA00157C7D /* FavoritesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		81A91B971B5978E3007C1E3A /* ShowsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsCollectionViewCell.swift; sourceTree = "<group>"; };
 		81A91B991B597C3D007C1E3A /* ShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
 		81C524011B600DFF00CD0FED /* TraktHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktHTTPClient.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		06312ACE1147FAB4D79D078C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				814BFE4F1B67F5FA00157C7D /* FavoritesManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				123AC0A76BBE98F064817EC4 /* AppDelegate.swift in Sources */,
 				81C7BC591B66D03600C5880F /* SeasonsTableViewCell.swift in Sources */,
 				81A91B9A1B597C3D007C1E3A /* ShowsViewController.swift in Sources */,
+				814BFE501B67F5FA00157C7D /* FavoritesManager.swift in Sources */,
 				811EE2C81B5846260026896F /* EpisodeTableViewCell.swift in Sources */,
 				81FCF7791B56DE4200E78ACA /* CustomNavigationController.swift in Sources */,
 				E22AF60C2C34D51208B46BC1 /* Storyboards.swift in Sources */,

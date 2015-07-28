@@ -295,6 +295,8 @@ extension SeasonsTableViewController {
 
         var viewType: UIView.Type? {
             switch (self) {
+            case SeasonsCell:
+                return SeasonsTableViewCell.self
             default:
                 return nil
             }

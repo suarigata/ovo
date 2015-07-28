@@ -13,12 +13,13 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var collectionView: UITableView!
     
     var show : String?
+    var season : Int?
     private var episodes : [Episode]?
     
     private let traktHTTPClient = TraktHTTPClient()
     
     func loadSeasonEpisodes() {
-        traktHTTPClient.getEpisodes(self.show!, season: 1) { [weak self] result in
+        traktHTTPClient.getEpisodes(self.show!, season: self.season!) { [weak self] result in
             if let episodes = result.value {
                 self?.episodes = episodes
                 self?.collectionView.reloadData()
@@ -34,6 +35,13 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
         
         loadSeasonEpisodes()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let index = collectionView.indexPathForSelectedRow(){
+            collectionView.deselectRowAtIndexPath(index, animated: true)
+        }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,12 +59,16 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         if segue == Segue.episode_to_show{
-//            if let cell = sender as? UITableViewCell, indexPath = collectionView.indexPathForCell(cell){
-//                let vc = segue.destinationViewController as! EpisodeViewController
-//                vc.episode = episodes?[indexPath.row]
-//            }
+            if let cell = sender as? UITableViewCell, indexPath = collectionView.indexPathForCell(cell){
+                let vc = segue.destinationViewController as! EpisodeViewController
+                vc.episode = episodes?[indexPath.row]
+            }
         }
     }
 }
