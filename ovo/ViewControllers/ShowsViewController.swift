@@ -14,12 +14,18 @@ class ShowsViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     private let traktHTTPClient = TraktHTTPClient()
     private var shows : [Show]?
+    private var favoritos : [Show]?
+    private var lista : [Show]?
     private var images : [UIImage] = []
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     func loadShows() {
         traktHTTPClient.getPopularShows { [weak self] result in
             if let shows = result.value {
                 self?.shows = shows
+                self?.lista = shows // primeira vez mostra popular
+                self?.favoritesChanged()
                 self?.collectionView.reloadData()
             }
             else{
@@ -31,10 +37,41 @@ class ShowsViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let name = FavoritesManager.favoritesChangedNotificationName
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "favoritesChanged",
+            name: name, object: nil)
+        
         self.loadShows()
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.escolheLista()
+    }
+    
+    func favoritesChanged(){
+        
+        self.favoritos = []
+        if let shows = self.shows{
+            let fm = FavoritesManager()
+            let identifiers = fm.favoritesIdentifiers
+            self.favoritos = shows.filter { (show : Show) -> Bool in
+                return identifiers.contains(show.identifiers.trakt)
+            }
+        }
+    }
+    
+    func escolheLista(){
+        self.lista = self.segmentedControl.selectedSegmentIndex == 0 ? self.shows : self.favoritos
+        collectionView.reloadData()
+    }
+    
+    @IBAction func changeList(sender: AnyObject){
+        escolheLista()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,14 +79,14 @@ class ShowsViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.shows?.count ?? 0
+        return self.lista?.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let identifier = Reusable.ShowsCell.identifier!
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! ShowsCollectionViewCell
         
-        if let shows = self.shows{
+        if let shows = self.lista{
             cell.loadShow(shows[indexPath.row])
         }
     
@@ -73,8 +110,9 @@ class ShowsViewController: UIViewController, UICollectionViewDataSource, UIColle
         if segue == Segue.show_to_show{
             if let cell = sender as? UICollectionViewCell, indexPath = collectionView.indexPathForCell(cell){
                 let vc = segue.destinationViewController as! SeasonsTableViewController
-                if let s = shows{
+                if let s = lista{
                     vc.show = s[indexPath.row].identifiers.slug
+                    vc.traktId = s[indexPath.row].identifiers.trakt
                 }
             }
         }

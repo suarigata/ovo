@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qjA-fs-j5N">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="60g-oy-U1h">
                                     <size key="itemSize" width="126" height="133"/>
@@ -51,11 +51,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYi-r5-zvX">
-                                                    <rect key="frame" x="42" y="112" width="42" height="21"/>
+                                                    <rect key="frame" x="49" y="112" width="28.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="OLi-BL-hIH"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -85,18 +85,41 @@
                                     <outlet property="delegate" destination="qLO-Xw-cao" id="lF4-hX-qqv"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpo-BT-ox8">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="itB-7l-tg6" userLabel="oio">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Ukt-LB-P8S">
+                                            <rect key="frame" x="180" y="7.5" width="240" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Popular"/>
+                                                <segment title="Favorites"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="changeList:" destination="qLO-Xw-cao" eventType="valueChanged" id="cA0-wz-e2T"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yzX-Lv-KjL" firstAttribute="top" secondItem="qjA-fs-j5N" secondAttribute="bottom" id="N6V-fq-cnj"/>
                             <constraint firstAttribute="trailing" secondItem="qjA-fs-j5N" secondAttribute="trailing" id="P5N-EK-uAt"/>
-                            <constraint firstItem="qjA-fs-j5N" firstAttribute="top" secondItem="Lyd-GS-MBc" secondAttribute="top" id="gaO-zD-6sM"/>
+                            <constraint firstItem="cpo-BT-ox8" firstAttribute="leading" secondItem="Lyd-GS-MBc" secondAttribute="leading" id="XDu-If-0IA"/>
+                            <constraint firstItem="qjA-fs-j5N" firstAttribute="top" secondItem="Lyd-GS-MBc" secondAttribute="top" constant="44" id="gaO-zD-6sM"/>
+                            <constraint firstItem="cpo-BT-ox8" firstAttribute="top" secondItem="tjW-9W-rHl" secondAttribute="bottom" id="joo-DR-M8G"/>
                             <constraint firstItem="qjA-fs-j5N" firstAttribute="leading" secondItem="Lyd-GS-MBc" secondAttribute="leading" id="n5h-QK-i58"/>
+                            <constraint firstAttribute="trailing" secondItem="cpo-BT-ox8" secondAttribute="trailing" id="yJb-RD-igA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Shows" id="L0M-fb-Azn"/>
                     <connections>
                         <outlet property="collectionView" destination="qjA-fs-j5N" id="YxS-UT-YcQ"/>
+                        <outlet property="segmentedControl" destination="Ukt-LB-P8S" id="UQV-So-HDU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZQ-zE-PSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -111,13 +134,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="ETh-lx-prn">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem id="DH8-FR-Zmw"/>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SeasonsCell" rowHeight="110" id="AdC-tm-Qah" customClass="SeasonsTableViewCell" customModule="ovo" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -215,9 +231,16 @@
                             <outlet property="delegate" destination="77t-Pd-MEo" id="tlZ-CD-0Yh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Seasons" id="7aA-Ol-ebU"/>
+                    <navigationItem key="navigationItem" title="Seasons" id="7aA-Ol-ebU">
+                        <barButtonItem key="rightBarButtonItem" image="like-heart-on" id="I9Y-83-Tbe">
+                            <connections>
+                                <action selector="favoritar:" destination="77t-Pd-MEo" id="gLM-2F-R4e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="w7g-5p-EbV" id="JGS-Aj-BsC"/>
+                        <outlet property="starImage" destination="I9Y-83-Tbe" id="iBE-Oi-sZ6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqZ-uf-rso" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -361,7 +384,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Episode" id="lcu-jg-eED">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="3vA-IY-MxA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="3vA-IY-MxA">
+                            <connections>
+                                <action selector="share:" destination="FVD-mF-Jgc" id="igB-Im-TRL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -378,6 +405,7 @@
     </scenes>
     <resources>
         <image name="bg" width="320" height="200"/>
+        <image name="like-heart-on" width="34" height="30"/>
         <image name="poster" width="96" height="139"/>
         <image name="star-gray" width="10" height="10"/>
         <image name="star-yellow" width="10" height="10"/>

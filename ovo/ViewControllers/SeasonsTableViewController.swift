@@ -11,8 +11,11 @@ import TraktModels
 
 class SeasonsTableViewController: UITableViewController{
     
+    
+    @IBOutlet weak var starImage: UIBarButtonItem!
     @IBOutlet var collectionView: UITableView!
     var show : String?
+    var traktId : Int?
     var seasons : [Season]?
     
     private let traktHTTPClient = TraktHTTPClient()
@@ -30,7 +33,32 @@ class SeasonsTableViewController: UITableViewController{
     }
     
     override func viewDidLoad() {
+        
+        let name = FavoritesManager.favoritesChangedNotificationName
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "favoritesChanged",
+            name: name, object: nil)
+        
         loadSeasons()
+        favoritesChanged() // da primeira vez para por o certo
+    }
+    
+    deinit{
+        let name = FavoritesManager.favoritesChangedNotificationName
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self, name: name, object: nil)
+    }
+    
+    func favoritesChanged(){
+        let manager = FavoritesManager()
+        let favoritos = manager.favoritesIdentifiers
+        
+        if favoritos.contains(self.traktId!){
+            self.starImage.tintColor = UIColor.yellowColor()
+        }
+        else{
+            self.starImage.tintColor = UIColor.whiteColor()
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,5 +85,10 @@ class SeasonsTableViewController: UITableViewController{
                 vc.show = self.show
             }
         }
+    }
+    
+    @IBAction func favoritar(sender: AnyObject){
+        let manager = FavoritesManager()
+        manager.toggle(self.traktId!)
     }
 }

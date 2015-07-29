@@ -47,11 +47,6 @@ class EpisodeViewController: UIViewController {
         
         loadEpisode()
         
-//        let url = NSURL(string: "http://www.google.com")!
-//        let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-//        
-//        presentViewController(vc, animated: true, completion: nil)
-        
         // Do any additional setup after loading the view.
         //titleEpisode.text = "Episode Title"
         
@@ -62,7 +57,13 @@ class EpisodeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    @IBAction func share(sender: AnyObject){
+//        let url = NSURL(string: episode?.screenshot?.fullImageURL)!
+        if let url = episode?.screenshot?.fullImageURL?.absoluteString, over = episode?.overview, t = episode?.title{
+            let vc = UIActivityViewController(activityItems: [t, url, over], applicationActivities: nil)
+            presentViewController(vc, animated: true, completion: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation
