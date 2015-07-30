@@ -81,7 +81,7 @@ class SeasonsTableViewController: UITableViewController{
         if segue == Segue.season_to_show{
             if let cell = sender as? SeasonsTableViewCell, indexPath = collectionView.indexPathForCell(cell){
                 let vc = segue.destinationViewController as! SeasonViewController
-                vc.season = seasons?[indexPath.row].number
+                vc.season = seasons?[indexPath.row]
                 vc.show = self.show
             }
         }

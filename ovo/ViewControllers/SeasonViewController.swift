@@ -8,19 +8,24 @@
 
 import UIKit
 import TraktModels
+import Kingfisher
 
 class SeasonViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var collectionView: UITableView!
     @IBOutlet weak var titulo: UINavigationItem!
     
+    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var fotinha: UIImageView!
     var show : String?
-    var season : Int?
+    var season : Season?
     private var episodes : [Episode]?
     
     private let traktHTTPClient = TraktHTTPClient()
+    private var taskFotinha: RetrieveImageTask?
+    private var taskBg: RetrieveImageTask?
     
     func loadSeasonEpisodes() {
-        traktHTTPClient.getEpisodes(self.show!, season: self.season!) { [weak self] result in
+        traktHTTPClient.getEpisodes(self.show!, season: self.season!.number) { [weak self] result in
             if let episodes = result.value {
                 self?.episodes = episodes
                 self?.collectionView.reloadData()
@@ -34,7 +39,23 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.titulo.title = "Season " + String(self.season ?? 0)
+        self.titulo.title = "Season " + String(self.season?.number ?? 0)
+        
+        let placeholder = UIImage(named: "poster")
+        if let url = self.season?.poster?.fullImageURL ?? self.season?.poster?.mediumImageURL ?? self.season?.poster?.thumbImageURL {
+            taskFotinha = fotinha.kf_setImageWithURL(url, placeholderImage: placeholder)
+        }
+        else{
+            fotinha.image = placeholder
+        }
+        
+        let placeholder2 = UIImage(named: "bg")
+        if let url = self.season?.thumbImageURL{
+            taskBg = bg.kf_setImageWithURL(url, placeholderImage: placeholder)
+        }
+        else{
+            bg.image = placeholder2
+        }
         
         loadSeasonEpisodes()
         // Do any additional setup after loading the view.

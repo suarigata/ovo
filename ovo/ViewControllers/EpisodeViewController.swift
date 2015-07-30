@@ -32,7 +32,6 @@ class EpisodeViewController: UIViewController {
             
             let placeholder = UIImage(named: "poster")
 
-
             if let url = episode?.screenshot?.fullImageURL ?? episode?.screenshot?.mediumImageURL ?? episode?.screenshot?.thumbImageURL{
                 self.task = self.imageEpisode.kf_setImageWithURL(url, placeholderImage: placeholder)
             }
